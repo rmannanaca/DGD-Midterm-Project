@@ -67,5 +67,5 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "DGD Midterm.slnx"
+    "dotnet.defaultSolution": "DGD-Midterm-Project.slnx"
 }

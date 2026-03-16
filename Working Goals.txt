@@ -1,0 +1,31 @@
+Working Goals
+
+Move(DONE)
+
+
+Wall Jump
+Jump
+Air dash
+
+Bound Movement Speed(DONE)
+Changes between walking and sprinting
+
+
+Firing Mechanic
+Attack Mechanic
+Health System
+Hits
+Death
+
+Gameplay Loop
+Rounds: Survive until death
+Score System
+Upgrades?
+Boons
+Rerolls
+
+
+One Arena for now
+
+Long Term:
+Residual motion...
