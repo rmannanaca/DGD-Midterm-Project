@@ -54,7 +54,7 @@ public class MidtermPlayerScript : MonoBehaviour
         {
             if(!Input.GetKey("space"))
             {
-                JumpsRemaining++;
+                JumpsRemaining = 1;
                 DashesRemaining = 1;
             }
             
@@ -84,7 +84,7 @@ public class MidtermPlayerScript : MonoBehaviour
         
 
         //MOVEMENT "ENGINE"
-        MovementVector = new Vector2(Input.GetAxis("Horizontal") * MovementSpeed,0);
+        MovementVector = new Vector2(Input.GetAxisRaw("Horizontal") * MovementSpeed,0);
 
         if (MovementVector.sqrMagnitude > MaxSpeed)
         {
@@ -152,6 +152,17 @@ public class MidtermPlayerScript : MonoBehaviour
             Dashing = false;
         }
 
+
+        //DIVE
+
+        if(isGrounded == false && Input.GetKeyDown("d"))
+        {
+
+            PlayerRigidbody2D.linearVelocity = new Vector2(0,0);
+
+                PlayerRigidbody2D.AddForce(new Vector2(0,-5f));
+
+        }
 
 
 
