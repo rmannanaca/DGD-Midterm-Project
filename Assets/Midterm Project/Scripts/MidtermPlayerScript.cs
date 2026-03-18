@@ -8,6 +8,8 @@ public class MidtermPlayerScript : MonoBehaviour
     public Rigidbody2D PlayerRigidbody2D;
     // public Transform PlayerTransform2D;
     public Vector2 MovementVector;
+    public float InputMotionSync;
+    public float MagAlongMovementVector;
 
 
     public Vector2 JumpVector;
@@ -29,7 +31,21 @@ public class MidtermPlayerScript : MonoBehaviour
 
 
 
+    public RaycastHit2D FrontNormalDetector;
+    public RaycastHit2D BackNormalDetector;
+
     // public Vector2 ShowInputAxis;
+    // public float RaycastDistance;
+
+     public LayerMask TargetLayers;
+    public Vector2 SurfSecVector;
+
+    public Vector2 SurfNormalVector;
+
+    // public Vector2 testVector;
+    // public Vector2 testVector2;
+
+    // public float testAngle;
     
 
 
@@ -37,7 +53,7 @@ public class MidtermPlayerScript : MonoBehaviour
     void Start()
     {
         PlayerRigidbody2D= GetComponent<Rigidbody2D>();
-        MovementSpeed = 100f;
+        MovementSpeed = 10.0f;
         MaxSpeed = 1.0f;
     }
 
@@ -45,7 +61,42 @@ public class MidtermPlayerScript : MonoBehaviour
     void Update()
     {
 
-        PlayerRigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
+        // PlayerRigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
+
+        FrontNormalDetector = Physics2D.Raycast(transform.position + transform.right * 0.20f, -Vector2.up, 0.55f, TargetLayers);
+        BackNormalDetector = Physics2D.Raycast(transform.position - transform.right * 0.20f, -Vector2.up, 0.55f, TargetLayers);
+
+        if (FrontNormalDetector && BackNormalDetector)
+        {
+            // Debug.DrawRay(transform.position + transform.right * 0.1f, -Vector2.up* 0.75f, Color.green);
+            // Debug.DrawRay(transform.position - transform.right * 0.1f, -Vector2.up* 0.75f, Color.green);
+
+            SurfSecVector = FrontNormalDetector.point - BackNormalDetector.point;
+
+            SurfNormalVector = new Vector2(-SurfSecVector.y,SurfSecVector.x);
+
+        }
+
+        if (FrontNormalDetector.collider != null && BackNormalDetector.collider != null)
+        {
+            // testVector = FrontNormalDetector.point;
+            // testVector2 = BackNormalDetector.point;
+            // testAngle = Mathf.Atan2(SurfNormalVector.y, SurfNormalVector.x) * Mathf.Rad2Deg;
+
+            float NormalAngle = Mathf.Atan2(SurfNormalVector.y, SurfNormalVector.x) * Mathf.Rad2Deg;
+
+
+            Quaternion targetRotation = Quaternion.Euler(0f, 0f, NormalAngle-90);
+
+            transform.rotation = targetRotation;
+
+
+        }
+        else
+        {
+            transform.rotation = Quaternion.Euler(0f,0f,0f);
+        }
+
 
 
 
@@ -60,11 +111,23 @@ public class MidtermPlayerScript : MonoBehaviour
             
 
             //MOVEMENT CONSTRAINTS
-            if(Input.GetAxisRaw("Horizontal") == 0)
-            {
-            PlayerRigidbody2D.linearVelocity = new Vector2(0,PlayerRigidbody2D.linearVelocity.y);
+            // if(Input.GetAxisRaw("Horizontal") == 0)
+            // {
+            // PlayerRigidbody2D.linearVelocity = new Vector2(0,PlayerRigidbody2D.linearVelocity.y);
             
-            }
+            // }
+
+            MagAlongMovementVector = Vector2.Dot(MovementVector, PlayerRigidbody2D.linearVelocity)/MovementVector.magnitude;
+            
+            // if(InputMotionSync > 1)
+            // {
+            //     InputMotionSync = 1;
+            // }
+
+            // if(InputMotionSync < 0)
+            // {
+            //     PlayerRigidbody2D.linearVelocity = new Vector2(PlayerRigidbody2D.linearVelocity.x * -1,PlayerRigidbody2D.linearVelocity.y);
+            // }
         }
         else
         {
@@ -84,12 +147,16 @@ public class MidtermPlayerScript : MonoBehaviour
         
 
         //MOVEMENT "ENGINE"
-        MovementVector = new Vector2(Input.GetAxisRaw("Horizontal") * MovementSpeed,0);
+        // MovementVector = transform.right * Input.GetAxisRaw("Horizontal") * MovementSpeed;
 
-        if (MovementVector.sqrMagnitude > MaxSpeed)
-        {
-            MovementVector = MovementVector.normalized * MaxSpeed;
-        }
+        MovementVector = SurfSecVector * Input.GetAxisRaw("Horizontal") * 10f;
+
+        // if (MagAlongMovementVector > MaxSpeed)
+        // {
+        //     PlayerRigidbody2D.linearVelocity = PlayerRigidbody2D.linearVelocity.normalized * MaxSpeed/Vector2.Dot(PlayerRigidbody2D.linearVelocity, MovementVector);
+        // }
+
+        PlayerRigidbody2D.AddForce(MovementVector);
 
 
         //JUMP
@@ -170,7 +237,7 @@ public class MidtermPlayerScript : MonoBehaviour
 
 
 
-        PlayerRigidbody2D.AddForce(MovementVector);
+        
 
     }
 
