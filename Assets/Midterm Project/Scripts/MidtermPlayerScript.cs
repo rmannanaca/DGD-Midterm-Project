@@ -45,7 +45,7 @@ public class MidtermPlayerScript : MonoBehaviour
     // public Vector2 testVector;
     // public Vector2 testVector2;
 
-    // public float testAngle;
+    public float testAngle;
     
 
 
@@ -53,8 +53,8 @@ public class MidtermPlayerScript : MonoBehaviour
     void Start()
     {
         PlayerRigidbody2D= GetComponent<Rigidbody2D>();
-        MovementSpeed = 10.0f;
-        MaxSpeed = 1.0f;
+        MovementSpeed = 1.0f;
+        MaxSpeed = 2.0f;
     }
 
     // Update is called once per frame
@@ -63,13 +63,13 @@ public class MidtermPlayerScript : MonoBehaviour
 
         // PlayerRigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
 
-        FrontNormalDetector = Physics2D.Raycast(transform.position + transform.right * 0.20f, -Vector2.up, 0.55f, TargetLayers);
-        BackNormalDetector = Physics2D.Raycast(transform.position - transform.right * 0.20f, -Vector2.up, 0.55f, TargetLayers);
+        FrontNormalDetector = Physics2D.Raycast(transform.position + transform.right * 0.20f, -transform.up, 0.55f, TargetLayers);
+        BackNormalDetector = Physics2D.Raycast(transform.position - transform.right * 0.20f, -transform.up, 0.55f, TargetLayers);
 
         if (FrontNormalDetector && BackNormalDetector)
         {
-            // Debug.DrawRay(transform.position + transform.right * 0.1f, -Vector2.up* 0.75f, Color.green);
-            // Debug.DrawRay(transform.position - transform.right * 0.1f, -Vector2.up* 0.75f, Color.green);
+            Debug.DrawRay(transform.position + transform.right * 0.20f, -transform.up* 0.55f, Color.green);
+            Debug.DrawRay(transform.position - transform.right * 0.20f, -transform.up* 0.55f, Color.green);
 
             SurfSecVector = FrontNormalDetector.point - BackNormalDetector.point;
 
@@ -81,7 +81,7 @@ public class MidtermPlayerScript : MonoBehaviour
         {
             // testVector = FrontNormalDetector.point;
             // testVector2 = BackNormalDetector.point;
-            // testAngle = Mathf.Atan2(SurfNormalVector.y, SurfNormalVector.x) * Mathf.Rad2Deg;
+            testAngle = Mathf.Atan2(SurfNormalVector.y, SurfNormalVector.x) * Mathf.Rad2Deg;
 
             float NormalAngle = Mathf.Atan2(SurfNormalVector.y, SurfNormalVector.x) * Mathf.Rad2Deg;
 
@@ -117,7 +117,7 @@ public class MidtermPlayerScript : MonoBehaviour
             
             // }
 
-            MagAlongMovementVector = Vector2.Dot(MovementVector, PlayerRigidbody2D.linearVelocity)/MovementVector.magnitude;
+            // MagAlongMovementVector = Vector2.Dot(SurfSecVector, PlayerRigidbody2D.linearVelocity)/(SurfSecVector.magnitude*SurfNormalVector.magnitude);
             
             // if(InputMotionSync > 1)
             // {
@@ -153,20 +153,22 @@ public class MidtermPlayerScript : MonoBehaviour
 
         // if (MagAlongMovementVector > MaxSpeed)
         // {
-        //     PlayerRigidbody2D.linearVelocity = PlayerRigidbody2D.linearVelocity.normalized * MaxSpeed/Vector2.Dot(PlayerRigidbody2D.linearVelocity, MovementVector);
+        //     PlayerRigidbody2D.linearVelocity = SurfSecVector.normalized * MaxSpeed;
         // }
 
-        PlayerRigidbody2D.AddForce(MovementVector);
+        // PlayerRigidbody2D.AddForce(MovementVector);
 
 
         //JUMP
 
         if(Input.GetKeyDown("space") == true && JumpsRemaining >= 1)
         {
+            PlayerRigidbody2D.linearVelocity = new Vector2(0,0);
+
             Launchpoint = transform.position.y;
             JumpHeight = Launchpoint + 5;
-            JumpVector = new Vector2(0,25);
-            PlayerRigidbody2D.AddForce(JumpVector, ForceMode2D.Impulse);
+            JumpVector = transform.up;
+            PlayerRigidbody2D.AddForce(JumpVector * 25f, ForceMode2D.Impulse);
             HangTime = 1f;
             JumpsRemaining--;
             
