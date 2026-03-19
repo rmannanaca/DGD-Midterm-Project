@@ -16,6 +16,14 @@ public class MidtermCameraScript : MonoBehaviour
     void Update()
     {
 
-        transform.position = new Vector3(midtermPlayerScript.transform.position.x, transform.position.y,-10);
+        transform.position = new Vector3(midtermPlayerScript.transform.position.x, midtermPlayerScript.transform.position.y,-10);
+
+
+        // if(midtermPlayerScript.transform.position.y - transform.position.y)
+        // {
+            
+        // }
+
+
     }
 }

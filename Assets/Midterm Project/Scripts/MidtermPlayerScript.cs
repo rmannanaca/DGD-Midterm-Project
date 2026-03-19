@@ -46,7 +46,17 @@ public class MidtermPlayerScript : MonoBehaviour
     // public Vector2 testVector2;
 
     public float testAngle;
-    
+
+
+    public float PlayerHealth;
+    public float HitDamage;
+    public float DamageReceived;
+
+    public bool isDamaged;
+
+    public GameObject Enemy;
+    public Collider2D myCollider2D;
+
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -146,17 +156,19 @@ public class MidtermPlayerScript : MonoBehaviour
             }
         
 
+
+        
         //MOVEMENT "ENGINE"
         // MovementVector = transform.right * Input.GetAxisRaw("Horizontal") * MovementSpeed;
 
         MovementVector = SurfSecVector * Input.GetAxisRaw("Horizontal") * 10f;
 
-        // if (MagAlongMovementVector > MaxSpeed)
+        // if (PlayerRigidbody2D.linearVelocity.magnitude > MaxSpeed)
         // {
-        //     PlayerRigidbody2D.linearVelocity = SurfSecVector.normalized * MaxSpeed;
+        //     PlayerRigidbody2D.linearVelocity = PlayerRigidbody2D.linearVelocity.normalized * MaxSpeed;
         // }
 
-        // PlayerRigidbody2D.AddForce(MovementVector);
+        PlayerRigidbody2D.AddForce(MovementVector);
 
 
         //JUMP
@@ -234,16 +246,36 @@ public class MidtermPlayerScript : MonoBehaviour
         }
 
 
+        // TAKE DAMAGE
+        if (isDamaged == true)
+        {
+            PlayerRigidbody2D.AddForce((transform.position - Enemy.transform.position), ForceMode2D.Impulse);
+        } 
 
 
 
-
+        if (myCollider2D.IsTouchingLayers(LayerMask.GetMask("Enemy")))
+        {
+            isDamaged = true;
+            PlayerRigidbody2D.AddForce(((transform.position - Enemy.transform.position) + Vector3.up*2)*0.1f, ForceMode2D.Impulse);
+        }
+        else
+        {
+            isDamaged = false;
+        }
 
         
 
     }
 
 
+
+
+// void OnCollisionEnter(Collision Enemycollision) {
+//     if (Enemycollision.gameObject.layer == LayerMask.NameToLayer("Enemy")) {
+//         isDamaged = true;
+//     }
+// }
 
 void OnCollisionEnter2D(Collision2D other)
     {
