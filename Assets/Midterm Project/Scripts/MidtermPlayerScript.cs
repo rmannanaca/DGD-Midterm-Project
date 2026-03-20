@@ -31,8 +31,11 @@ public class MidtermPlayerScript : MonoBehaviour
 
 
 
+    public RaycastHit2D RightNormalDetector;
+    public RaycastHit2D LeftNormalDetector;
+    public RaycastHit2D MiddleNormalDetector;
     public RaycastHit2D FrontNormalDetector;
-    public RaycastHit2D BackNormalDetector;
+    public Vector3 LeadingTangentVector;
 
     // public Vector2 ShowInputAxis;
     // public float RaycastDistance;
@@ -57,6 +60,12 @@ public class MidtermPlayerScript : MonoBehaviour
     public GameObject Enemy;
     public Collider2D myCollider2D;
 
+    public Vector3 testVector;
+
+    public Vector2 InstaSurfNormVector;
+
+
+
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -64,7 +73,7 @@ public class MidtermPlayerScript : MonoBehaviour
     {
         PlayerRigidbody2D= GetComponent<Rigidbody2D>();
         MovementSpeed = 1.0f;
-        MaxSpeed = 2.0f;
+        MaxSpeed = 5.0f;
     }
 
     // Update is called once per frame
@@ -73,24 +82,45 @@ public class MidtermPlayerScript : MonoBehaviour
 
         // PlayerRigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
 
-        FrontNormalDetector = Physics2D.Raycast(transform.position + transform.right * 0.20f, -transform.up, 0.55f, TargetLayers);
-        BackNormalDetector = Physics2D.Raycast(transform.position - transform.right * 0.20f, -transform.up, 0.55f, TargetLayers);
+        RightNormalDetector = Physics2D.Raycast(transform.position + transform.right * 0.20f, -transform.up, 0.55f, TargetLayers);
+        LeftNormalDetector = Physics2D.Raycast(transform.position - transform.right * 0.20f, -transform.up, 0.55f, TargetLayers);
+        MiddleNormalDetector = Physics2D.Raycast(transform.position, -transform.up, 0.55f, TargetLayers);
+        
+        FrontNormalDetector = Physics2D.Raycast(transform.position + transform.right * Input.GetAxisRaw("Horizontal") * 0.20f, -transform.up, 0.55f, TargetLayers);
+        
+        LeadingTangentVector = Vector3.Cross(FrontNormalDetector.normal, Vector3.forward * Input.GetAxisRaw("Horizontal"));
 
-        if (FrontNormalDetector && BackNormalDetector)
+        testVector = FrontNormalDetector.normal;
+
+
+        Debug.DrawRay(transform.position + transform.right * 0.20f, -transform.up * 0.55f, Color.green);
+        Debug.DrawRay(transform.position - transform.right * 0.20f, -transform.up * 0.55f, Color.green);
+        Debug.DrawRay(transform.position, LeadingTangentVector * 1.0f, Color.red);
+
+
+        if(MiddleNormalDetector.collider != null)
         {
-            Debug.DrawRay(transform.position + transform.right * 0.20f, -transform.up* 0.55f, Color.green);
-            Debug.DrawRay(transform.position - transform.right * 0.20f, -transform.up* 0.55f, Color.green);
+            
+        }
 
-            SurfSecVector = FrontNormalDetector.point - BackNormalDetector.point;
+
+
+
+
+        if (RightNormalDetector && LeftNormalDetector)
+        {
+            
+
+            SurfSecVector = RightNormalDetector.point - LeftNormalDetector.point;
 
             SurfNormalVector = new Vector2(-SurfSecVector.y,SurfSecVector.x);
 
         }
 
-        if (FrontNormalDetector.collider != null && BackNormalDetector.collider != null)
+        if (RightNormalDetector.collider != null && LeftNormalDetector.collider != null)
         {
-            // testVector = FrontNormalDetector.point;
-            // testVector2 = BackNormalDetector.point;
+            // testVector = RightNormalDetector.point;
+            // testVector2 = LeftNormalDetector.point;
             testAngle = Mathf.Atan2(SurfNormalVector.y, SurfNormalVector.x) * Mathf.Rad2Deg;
 
             float NormalAngle = Mathf.Atan2(SurfNormalVector.y, SurfNormalVector.x) * Mathf.Rad2Deg;
@@ -100,32 +130,44 @@ public class MidtermPlayerScript : MonoBehaviour
 
             transform.rotation = targetRotation;
 
+            
+            // LeadingTangentVector = new Vector3(FrontNormalDetector.point.x, FrontNormalDetector.point.y, 0) - transform.position;
+
+            
+
 
         }
         else
         {
             transform.rotation = Quaternion.Euler(0f,0f,0f);
         }
+        
+        
+        MagAlongMovementVector = Mathf.Abs(Vector2.Dot(PlayerRigidbody2D.linearVelocity, MovementVector));
 
 
-
+            //MOVEMENT CONSTRAINTS
+            if(MagAlongMovementVector > MaxSpeed)
+            {
+            PlayerRigidbody2D.linearVelocity = new Vector2(MovementVector.normalized.x * MaxSpeed, PlayerRigidbody2D.linearVelocity.y);
+            
+            }
 
         //GROUND CONSTRAINTS
         if (isGrounded == true)
         {
+
+            MovementVector = LeadingTangentVector.normalized * MovementSpeed;
+
+
             if(!Input.GetKey("space"))
             {
                 JumpsRemaining = 1;
                 DashesRemaining = 1;
             }
-            
 
-            //MOVEMENT CONSTRAINTS
-            // if(Input.GetAxisRaw("Horizontal") == 0)
-            // {
-            // PlayerRigidbody2D.linearVelocity = new Vector2(0,PlayerRigidbody2D.linearVelocity.y);
+
             
-            // }
 
             // MagAlongMovementVector = Vector2.Dot(SurfSecVector, PlayerRigidbody2D.linearVelocity)/(SurfSecVector.magnitude*SurfNormalVector.magnitude);
             
@@ -142,6 +184,7 @@ public class MidtermPlayerScript : MonoBehaviour
         else
         {
             MovementSpeed = 5;
+            MovementVector = MovementVector = transform.right * Input.GetAxisRaw("Horizontal") * MovementSpeed;
         }
 
         //JUMP CONSTRAINTS
@@ -159,9 +202,7 @@ public class MidtermPlayerScript : MonoBehaviour
 
         
         //MOVEMENT "ENGINE"
-        // MovementVector = transform.right * Input.GetAxisRaw("Horizontal") * MovementSpeed;
-
-        MovementVector = SurfSecVector * Input.GetAxisRaw("Horizontal") * 10f;
+        
 
         // if (PlayerRigidbody2D.linearVelocity.magnitude > MaxSpeed)
         // {
