@@ -9,7 +9,7 @@ public class MidtermPlayerScript : MonoBehaviour
     // public Transform PlayerTransform2D;
     public Vector2 MovementVector;
     public float InputMotionSync;
-    public float MagAlongMovementVector;
+    public Vector2 MagAlongMovementVector;
 
 
     public Vector2 JumpVector;
@@ -88,7 +88,8 @@ public class MidtermPlayerScript : MonoBehaviour
         
         FrontNormalDetector = Physics2D.Raycast(transform.position + transform.right * Input.GetAxisRaw("Horizontal") * 0.20f, -transform.up, 0.55f, TargetLayers);
         
-        LeadingTangentVector = Vector3.Cross(FrontNormalDetector.normal, Vector3.forward * Input.GetAxisRaw("Horizontal"));
+        LeadingTangentVector = Vector3.Cross(FrontNormalDetector.normal, Vector3.forward * Input.GetAxisRaw("Horizontal")); // - transform.up * 6f
+        // LeadingTangentVector = transform.right * Input.GetAxisRaw("Horizontal") * MovementSpeed - transform.up * 7.5f;
 
         testVector = FrontNormalDetector.normal;
 
@@ -119,19 +120,14 @@ public class MidtermPlayerScript : MonoBehaviour
 
         if (RightNormalDetector.collider != null && LeftNormalDetector.collider != null)
         {
-            // testVector = RightNormalDetector.point;
-            // testVector2 = LeftNormalDetector.point;
-            testAngle = Mathf.Atan2(SurfNormalVector.y, SurfNormalVector.x) * Mathf.Rad2Deg;
 
-            float NormalAngle = Mathf.Atan2(SurfNormalVector.y, SurfNormalVector.x) * Mathf.Rad2Deg;
+            testAngle = Mathf.Atan2(SurfNormalVector.y, SurfNormalVector.x) * Mathf.Rad2Deg;
+            // float NormalAngle = Mathf.Atan2(SurfNormalVector.y, SurfNormalVector.x) * Mathf.Rad2Deg;
+            float NormalAngle = Mathf.Atan2(MiddleNormalDetector.normal.y, MiddleNormalDetector.normal.x) * Mathf.Rad2Deg;
 
 
             Quaternion targetRotation = Quaternion.Euler(0f, 0f, NormalAngle-90);
-
             transform.rotation = targetRotation;
-
-            
-            // LeadingTangentVector = new Vector3(FrontNormalDetector.point.x, FrontNormalDetector.point.y, 0) - transform.position;
 
             
 
@@ -143,11 +139,12 @@ public class MidtermPlayerScript : MonoBehaviour
         }
         
         
-        MagAlongMovementVector = Mathf.Abs(Vector2.Dot(PlayerRigidbody2D.linearVelocity, MovementVector));
+
+        MagAlongMovementVector = Vector2.Dot(PlayerRigidbody2D.linearVelocity, MovementVector.normalized) * MovementVector.normalized;
 
 
             //MOVEMENT CONSTRAINTS
-            if(MagAlongMovementVector > MaxSpeed)
+            if(MagAlongMovementVector.magnitude > MaxSpeed)
             {
             PlayerRigidbody2D.linearVelocity = new Vector2(MovementVector.normalized.x * MaxSpeed, PlayerRigidbody2D.linearVelocity.y);
             
@@ -166,25 +163,11 @@ public class MidtermPlayerScript : MonoBehaviour
                 DashesRemaining = 1;
             }
 
-
-            
-
-            // MagAlongMovementVector = Vector2.Dot(SurfSecVector, PlayerRigidbody2D.linearVelocity)/(SurfSecVector.magnitude*SurfNormalVector.magnitude);
-            
-            // if(InputMotionSync > 1)
-            // {
-            //     InputMotionSync = 1;
-            // }
-
-            // if(InputMotionSync < 0)
-            // {
-            //     PlayerRigidbody2D.linearVelocity = new Vector2(PlayerRigidbody2D.linearVelocity.x * -1,PlayerRigidbody2D.linearVelocity.y);
-            // }
         }
         else
         {
             MovementSpeed = 5;
-            MovementVector = MovementVector = transform.right * Input.GetAxisRaw("Horizontal") * MovementSpeed;
+            MovementVector = transform.right * Input.GetAxisRaw("Horizontal") * MovementSpeed;
         }
 
         //JUMP CONSTRAINTS
@@ -208,6 +191,11 @@ public class MidtermPlayerScript : MonoBehaviour
         // {
         //     PlayerRigidbody2D.linearVelocity = PlayerRigidbody2D.linearVelocity.normalized * MaxSpeed;
         // }
+
+        if (isGrounded == true && Input.GetAxisRaw("Horizontal") == 0)
+        {
+            PlayerRigidbody2D.linearVelocity = new Vector2(0, PlayerRigidbody2D.linearVelocity.y);
+        }
 
         PlayerRigidbody2D.AddForce(MovementVector);
 
@@ -282,7 +270,7 @@ public class MidtermPlayerScript : MonoBehaviour
 
             PlayerRigidbody2D.linearVelocity = new Vector2(0,0);
 
-                PlayerRigidbody2D.AddForce(new Vector2(0,-5f));
+                PlayerRigidbody2D.AddForce(new Vector2(0,-20f), ForceMode2D.Impulse);
 
         }
 
