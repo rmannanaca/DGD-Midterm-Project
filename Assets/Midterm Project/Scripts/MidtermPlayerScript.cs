@@ -192,9 +192,13 @@ public class MidtermPlayerScript : MonoBehaviour
         //     PlayerRigidbody2D.linearVelocity = PlayerRigidbody2D.linearVelocity.normalized * MaxSpeed;
         // }
 
-        if (isGrounded == true && Input.GetAxisRaw("Horizontal") == 0)
+        if (Input.GetAxisRaw("Horizontal") == 0)
         {
-            PlayerRigidbody2D.linearVelocity = new Vector2(0, PlayerRigidbody2D.linearVelocity.y);
+            if(isGrounded == true)
+            {
+                PlayerRigidbody2D.linearVelocity = new Vector2(0, 0);
+            }
+            
         }
 
         PlayerRigidbody2D.AddForce(MovementVector);
