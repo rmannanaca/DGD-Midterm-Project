@@ -7,7 +7,7 @@ public class HealthbarScript : MonoBehaviour
     public Image Healthbar;
     public float HealthRemaining;
 
-    public MidtermPlayerScript midtermPlayerScript;
+    public MidtermPlayerScriptOld midtermPlayerScriptOld;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -19,7 +19,7 @@ public class HealthbarScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(midtermPlayerScript.isDamaged == true)
+        if(midtermPlayerScriptOld.isDamaged == true)
         {
             HealthRemaining--;
         }
