@@ -1,0 +1,743 @@
+fileFormatVersion: 2
+guid: 88e01ac389709b441b76406125059190
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2023025874280939385
+    second: rehan beta spiret sheet-Sheet 1_0
+  - first:
+      213: -7138887466058582202
+    second: rehan beta spiret sheet-Sheet 1_1
+  - first:
+      213: 8886203578152026052
+    second: rehan beta spiret sheet-Sheet 1_2
+  - first:
+      213: 8374287689875326514
+    second: rehan beta spiret sheet-Sheet 1_3
+  - first:
+      213: -1000150089459029576
+    second: rehan beta spiret sheet-Sheet 1_4
+  - first:
+      213: 9160382971044906944
+    second: rehan beta spiret sheet-Sheet 1_5
+  - first:
+      213: 7991479472524634861
+    second: rehan beta spiret sheet-Sheet 1_6
+  - first:
+      213: -8835134240286569686
+    second: rehan beta spiret sheet-Sheet 1_7
+  - first:
+      213: 4592874707289386114
+    second: rehan beta spiret sheet-Sheet 1_8
+  - first:
+      213: 4104119412707965344
+    second: rehan beta spiret sheet-Sheet 1_9
+  - first:
+      213: 7491453048051030311
+    second: rehan beta spiret sheet-Sheet 1_10
+  - first:
+      213: -7723482278677589249
+    second: rehan beta spiret sheet-Sheet 1_11
+  - first:
+      213: -5961571926572779744
+    second: rehan beta spiret sheet-Sheet 1_12
+  - first:
+      213: -7101743288147677690
+    second: rehan beta spiret sheet-Sheet 1_13
+  - first:
+      213: 256798748061514252
+    second: rehan beta spiret sheet-Sheet 1_14
+  - first:
+      213: -13101729839323577
+    second: rehan beta spiret sheet-Sheet 1_15
+  - first:
+      213: 2536228540943879803
+    second: rehan beta spiret sheet-Sheet 1_16
+  - first:
+      213: 6735782038111762920
+    second: rehan beta spiret sheet-Sheet 1_17
+  - first:
+      213: 2543111988746335228
+    second: rehan beta spiret sheet-Sheet 1_18
+  - first:
+      213: -5465978403513113662
+    second: rehan beta spiret sheet-Sheet 1_19
+  - first:
+      213: 7766062613265684832
+    second: rehan beta spiret sheet-Sheet 1_20
+  - first:
+      213: 6232296280480645051
+    second: rehan beta spiret sheet-Sheet 1_21
+  - first:
+      213: 4386893914180818433
+    second: rehan beta spiret sheet-Sheet 1_22
+  - first:
+      213: 7047966847706034068
+    second: rehan beta spiret sheet-Sheet 1_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: rehan beta spiret sheet-Sheet 1_0
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 472
+        width: 45
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7808f009fa4cce3e0800000000000000
+      internalID: -2023025874280939385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rehan beta spiret sheet-Sheet 1_1
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 473
+        width: 102
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 647f61e4ca39dec90800000000000000
+      internalID: -7138887466058582202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rehan beta spiret sheet-Sheet 1_2
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 473
+        width: 98
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cf7e8db213225b70800000000000000
+      internalID: 8886203578152026052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rehan beta spiret sheet-Sheet 1_3
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 474
+        width: 76
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23602f9f842773470800000000000000
+      internalID: 8374287689875326514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rehan beta spiret sheet-Sheet 1_4
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 474
+        width: 71
+        height: 101
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b928bbeac0ce12f0800000000000000
+      internalID: -1000150089459029576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rehan beta spiret sheet-Sheet 1_5
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 356
+        width: 78
+        height: 98
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c74ba347c7302f70800000000000000
+      internalID: 9160382971044906944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rehan beta spiret sheet-Sheet 1_6
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 350
+        width: 71
+        height: 98
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dea28a55d3077ee60800000000000000
+      internalID: 7991479472524634861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rehan beta spiret sheet-Sheet 1_7
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 374
+        width: 113
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2b04d0183c436580800000000000000
+      internalID: -8835134240286569686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rehan beta spiret sheet-Sheet 1_8
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 372
+        width: 122
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28c2cd1563b2dbf30800000000000000
+      internalID: 4592874707289386114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rehan beta spiret sheet-Sheet 1_9
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 207
+        width: 93
+        height: 97
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a93e3e7cd2c4f830800000000000000
+      internalID: 4104119412707965344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rehan beta spiret sheet-Sheet 1_10
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 206
+        width: 92
+        height: 136
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72959941bdcf6f760800000000000000
+      internalID: 7491453048051030311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rehan beta spiret sheet-Sheet 1_11
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 208
+        width: 109
+        height: 108
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff2d56ec9cda0d490800000000000000
+      internalID: -7723482278677589249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rehan beta spiret sheet-Sheet 1_12
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 209
+        width: 56
+        height: 157
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02730b52bed344da0800000000000000
+      internalID: -5961571926572779744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rehan beta spiret sheet-Sheet 1_13
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 219
+        width: 87
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60e61f72b1a817d90800000000000000
+      internalID: -7101743288147677690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rehan beta spiret sheet-Sheet 1_14
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 183
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0ab8fcc915509300800000000000000
+      internalID: 256798748061514252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rehan beta spiret sheet-Sheet 1_15
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 184
+        width: 21
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 746ebfecb0471dff0800000000000000
+      internalID: -13101729839323577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rehan beta spiret sheet-Sheet 1_16
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 145
+        width: 33
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7eca24ab6e723320800000000000000
+      internalID: 2536228540943879803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rehan beta spiret sheet-Sheet 1_17
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 138
+        width: 12
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e9bb12731e4a7d50800000000000000
+      internalID: 6735782038111762920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rehan beta spiret sheet-Sheet 1_18
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 139
+        width: 12
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf3334931e2fa4320800000000000000
+      internalID: 2543111988746335228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rehan beta spiret sheet-Sheet 1_19
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 173
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c3e4ac1a91f424b0800000000000000
+      internalID: -5465978403513113662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rehan beta spiret sheet-Sheet 1_20
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 163
+        width: 16
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0699427ecc896cb60800000000000000
+      internalID: 7766062613265684832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rehan beta spiret sheet-Sheet 1_21
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 61
+        width: 109
+        height: 107
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbf790d62709d7650800000000000000
+      internalID: 6232296280480645051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rehan beta spiret sheet-Sheet 1_22
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 152
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 106121ea5c061ec30800000000000000
+      internalID: 4386893914180818433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rehan beta spiret sheet-Sheet 1_23
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 137
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49f6f3a91886fc160800000000000000
+      internalID: 7047966847706034068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 70637090afebf8a46aa5861cfb738dbf
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      rehan beta spiret sheet-Sheet 1_0: -2023025874280939385
+      rehan beta spiret sheet-Sheet 1_1: -7138887466058582202
+      rehan beta spiret sheet-Sheet 1_10: 7491453048051030311
+      rehan beta spiret sheet-Sheet 1_11: -7723482278677589249
+      rehan beta spiret sheet-Sheet 1_12: -5961571926572779744
+      rehan beta spiret sheet-Sheet 1_13: -7101743288147677690
+      rehan beta spiret sheet-Sheet 1_14: 256798748061514252
+      rehan beta spiret sheet-Sheet 1_15: -13101729839323577
+      rehan beta spiret sheet-Sheet 1_16: 2536228540943879803
+      rehan beta spiret sheet-Sheet 1_17: 6735782038111762920
+      rehan beta spiret sheet-Sheet 1_18: 2543111988746335228
+      rehan beta spiret sheet-Sheet 1_19: -5465978403513113662
+      rehan beta spiret sheet-Sheet 1_2: 8886203578152026052
+      rehan beta spiret sheet-Sheet 1_20: 7766062613265684832
+      rehan beta spiret sheet-Sheet 1_21: 6232296280480645051
+      rehan beta spiret sheet-Sheet 1_22: 4386893914180818433
+      rehan beta spiret sheet-Sheet 1_23: 7047966847706034068
+      rehan beta spiret sheet-Sheet 1_3: 8374287689875326514
+      rehan beta spiret sheet-Sheet 1_4: -1000150089459029576
+      rehan beta spiret sheet-Sheet 1_5: 9160382971044906944
+      rehan beta spiret sheet-Sheet 1_6: 7991479472524634861
+      rehan beta spiret sheet-Sheet 1_7: -8835134240286569686
+      rehan beta spiret sheet-Sheet 1_8: 4592874707289386114
+      rehan beta spiret sheet-Sheet 1_9: 4104119412707965344
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

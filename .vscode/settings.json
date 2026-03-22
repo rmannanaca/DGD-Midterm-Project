@@ -67,5 +67,6 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "DGD-Midterm-Project.slnx"
+    "dotnet.defaultSolution": "DGD-Midterm-Project.slnx",
+    "editor.acceptSuggestionOnCommitCharacter": false
 }

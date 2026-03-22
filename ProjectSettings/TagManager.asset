@@ -16,7 +16,7 @@ TagManager:
   - Coin
   - Ground
   - Enemy
-  - 
+  - Background
   - 
   - 
   - 
@@ -39,6 +39,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 2444766043
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
