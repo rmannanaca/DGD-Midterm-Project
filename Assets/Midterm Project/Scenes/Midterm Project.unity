@@ -701,6 +701,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 999702886}
     - target: {fileID: 1223555707710774718, guid: 937de142bd263324f841cf0c3acc9cfb, type: 3}
+      propertyPath: MidtermSpriteRenderer
+      value: 
+      objectReference: {fileID: 736274860}
+    - target: {fileID: 1223555707710774718, guid: 937de142bd263324f841cf0c3acc9cfb, type: 3}
       propertyPath: MidtermAnimationController
       value: 
       objectReference: {fileID: 736274856}
@@ -814,6 +818,11 @@ Animation:
   m_AnimatePhysics: 0
   m_UpdateMode: 0
   m_CullingType: 0
+--- !u!212 &736274860 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 1019695680463351993, guid: 937de142bd263324f841cf0c3acc9cfb, type: 3}
+  m_PrefabInstance: {fileID: 723916846}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &999702886 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7490634007892359132, guid: 30d07c32ee44bbc4783f8cd9c3367774, type: 3}
@@ -1257,6 +1266,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MidtermCameraScript
   midtermPlayerScriptOld: {fileID: 736274854}
   CameraPosition: {x: 0, y: 0, z: 0}
+  GroundedPosition: {x: 0, y: 0, z: 0}
+  PlayerPosition: {x: 0, y: 0, z: 0}
+  panTime: 0
+  TotalPanTime: 0
+  CameraYGap: 0
+  Panning: 0
 --- !u!1 &1970022559
 GameObject:
   m_ObjectHideFlags: 0
@@ -1482,6 +1497,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1066201040}
     m_Modifications:
+    - target: {fileID: -8978728357088291168, guid: 30d07c32ee44bbc4783f8cd9c3367774, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8978728357088291168, guid: 30d07c32ee44bbc4783f8cd9c3367774, type: 3}
+      propertyPath: midtermPlayerScriptOld
+      value: 
+      objectReference: {fileID: 736274854}
     - target: {fileID: 3529966346981508233, guid: 30d07c32ee44bbc4783f8cd9c3367774, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.14

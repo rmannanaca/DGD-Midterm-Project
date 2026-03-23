@@ -19,11 +19,11 @@ public class HealthbarScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(midtermPlayerScriptOld.isDamaged == true)
-        {
-            HealthRemaining--;
-        }
+        // if(midtermPlayerScriptOld.isDamaged == true)
+        // {
+        //     HealthRemaining--;
+        // }
 
-        Healthbar.fillAmount = HealthRemaining/100f;
+        Healthbar.fillAmount = midtermPlayerScriptOld.HealthRemaining/midtermPlayerScriptOld.PlayerTotalHealth;
     }
 }

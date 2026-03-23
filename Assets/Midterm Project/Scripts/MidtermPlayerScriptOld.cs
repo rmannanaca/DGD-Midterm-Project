@@ -58,9 +58,10 @@ public class MidtermPlayerScriptOld : MonoBehaviour
     public float testAngle;
 
 
-    public float PlayerHealth;
+    public float PlayerTotalHealth;
+    public float HealthRemaining;
     public float HitDamage;
-    public float DamageReceived;
+    public float DamageInfluence;
 
     public bool isDamaged;
 
@@ -86,6 +87,8 @@ public class MidtermPlayerScriptOld : MonoBehaviour
         PlayerRigidbody2D= GetComponent<Rigidbody2D>();
         MovementSpeed = 1.0f;
         MaxSpeed = 5.0f;
+        HealthRemaining = 100f;
+        DamageInfluence = 1.0f;
         // HangTime = 0.1f;
     }
 
@@ -335,15 +338,21 @@ public class MidtermPlayerScriptOld : MonoBehaviour
 
 
         // TAKE DAMAGE
-        if (myCollider2D.IsTouchingLayers(LayerMask.GetMask("Enemy")))
-        {
-            isDamaged = true;
-            PlayerRigidbody2D.AddForce(((transform.position - Enemy.transform.position) + Vector3.up*2)*0.1f, ForceMode2D.Impulse);
-        }
-        else
-        {
-            isDamaged = false;
-        }
+
+        PlayerTotalHealth = 100f;
+
+
+
+        // if (myCollider2D.IsTouchingLayers(LayerMask.GetMask("Enemy")))
+        // {
+        //     HealthRemaining -= 10f;
+        //     isDamaged = true;
+        //     PlayerRigidbody2D.AddForce(((transform.position - Enemy.transform.position) + Vector3.up*2)*0.1f, ForceMode2D.Impulse);
+        // }
+        // else
+        // {
+        //     isDamaged = false;
+        // }
 
         
 
@@ -406,11 +415,32 @@ public class MidtermPlayerScriptOld : MonoBehaviour
 
 
 
-void OnCollisionEnter(Collision Enemycollision) {
-    if (Enemycollision.gameObject.layer == LayerMask.NameToLayer("Enemy")) {
-        isDamaged = true;
+// void OnCollisionEnter(Collision Enemycollision) {
+//     if (Enemycollision.gameObject.layer == LayerMask.NameToLayer("Enemy")) {
+//         isDamaged = true;
+//     }
+// }
+
+
+void OnCollisionEnter2D(Collision2D collision)
+    {
+        // Check if the collided object is on the "Ground" layer.
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        {
+            
+            
+            HealthRemaining -= 10f * DamageInfluence;
+            isDamaged = true;
+            PlayerRigidbody2D.AddForce(((transform.position - collision.gameObject.transform.position) + Vector3.up*2) * 2f, ForceMode2D.Impulse);
+            
+            isJumping = false;
+            Dashing = false;
+            
+            // DamageInfluence = 0f;
+            
+            
+        }
     }
-}
 
 // void OnCollisionEnter2D(Collision2D other)
 //     {
