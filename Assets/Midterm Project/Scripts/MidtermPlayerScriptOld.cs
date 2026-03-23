@@ -79,6 +79,8 @@ public class MidtermPlayerScriptOld : MonoBehaviour
 
     public SpriteRenderer MidtermSpriteRenderer;
 
+    public bool youWin;
+
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -90,6 +92,7 @@ public class MidtermPlayerScriptOld : MonoBehaviour
         HealthRemaining = 100f;
         DamageInfluence = 1.0f;
         // HangTime = 0.1f;
+        youWin = false;
     }
 
     // Update is called once per frame
@@ -112,9 +115,9 @@ public class MidtermPlayerScriptOld : MonoBehaviour
         // testVector = FrontNormalDetector.normal;
 
 
-        // Debug.DrawRay(transform.position + transform.right * 0.20f, -transform.up * 0.55f, Color.green);
-        // Debug.DrawRay(transform.position - transform.right * 0.20f, -transform.up * 0.55f, Color.green);
-        // Debug.DrawRay(transform.position, LeadingTangentVector * 1.0f, Color.red);
+        Debug.DrawRay(transform.position + transform.right * 0.20f, -transform.up * 0.55f, Color.green);
+        Debug.DrawRay(transform.position - transform.right * 0.20f, -transform.up * 0.55f, Color.green);
+        Debug.DrawRay(transform.position, LeadingTangentVector * 1.0f, Color.red);
 
 
 
@@ -410,6 +413,9 @@ public class MidtermPlayerScriptOld : MonoBehaviour
         }
 
 
+
+
+
     }
 
 
@@ -424,6 +430,13 @@ public class MidtermPlayerScriptOld : MonoBehaviour
 
 void OnCollisionEnter2D(Collision2D collision)
     {
+
+        //WIN CONDITION
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Goal"))
+        {
+            youWin = true;
+        }
+
         // Check if the collided object is on the "Ground" layer.
         if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
@@ -435,6 +448,8 @@ void OnCollisionEnter2D(Collision2D collision)
             
             isJumping = false;
             Dashing = false;
+
+            
             
             // DamageInfluence = 0f;
             
