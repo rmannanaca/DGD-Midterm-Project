@@ -3,7 +3,7 @@ using UnityEngine;
 public class MidtermCameraScript : MonoBehaviour
 {
     
-    public MidtermPlayerScriptOld midtermPlayerScriptOld;
+    public MidtermPlayerScript MidtermPlayerScript;
     public Vector3 CameraPosition; 
     public Vector3 GroundedPosition;
     public Vector3 PlayerPosition;
@@ -26,7 +26,7 @@ public class MidtermCameraScript : MonoBehaviour
     {
 
 
-       PlayerPosition = midtermPlayerScriptOld.transform.position;
+       PlayerPosition = MidtermPlayerScript.transform.position;
 
        CameraYGap = PlayerPosition.y - transform.position.y;
 
@@ -34,7 +34,7 @@ public class MidtermCameraScript : MonoBehaviour
 
        TotalPanTime = 1.0f;
 
-        if(midtermPlayerScriptOld.isGrounded == true && CameraYGap > -2.826995f)
+        if(MidtermPlayerScript.isGrounded == true && CameraYGap > -2.826995f)
         {
             Panning = true;
             panTime = 0f;
@@ -69,14 +69,14 @@ public class MidtermCameraScript : MonoBehaviour
         // transform.position = CameraPosition;
 
 
-        // if(midtermPlayerScriptOld.transform.position.y - CameraPosition.y > 5)
+        // if(MidtermPlayerScript.transform.position.y - CameraPosition.y > 5)
         // {
-        //     CameraPosition = new Vector3(midtermPlayerScriptOld.transform.position.x, midtermPlayerScriptOld.transform.position.y + 5f,-10); 
+        //     CameraPosition = new Vector3(MidtermPlayerScript.transform.position.x, MidtermPlayerScript.transform.position.y + 5f,-10); 
         // }
 
-        // if(midtermPlayerScriptOld.transform.position.y - transform.position.y < -1)
+        // if(MidtermPlayerScript.transform.position.y - transform.position.y < -1)
         // {
-        //     CameraPosition = new Vector3(midtermPlayerScriptOld.transform.position.x, midtermPlayerScriptOld.transform.position.y + 1f,-10); 
+        //     CameraPosition = new Vector3(MidtermPlayerScript.transform.position.x, MidtermPlayerScript.transform.position.y + 1f,-10); 
         // }
 
         // void OnRay

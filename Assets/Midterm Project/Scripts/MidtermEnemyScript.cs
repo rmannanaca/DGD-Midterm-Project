@@ -4,16 +4,16 @@ public class MidtermEnemyScript : MonoBehaviour
 {
 
     public MidtermEnemySpawnerScript midtermEnemySpawnerScript;
-    public MidtermPlayerScriptOld midtermPlayerScriptOld;
+    public MidtermPlayerScript MidtermPlayerScript;
     public Vector2 enemyPath;
     public float trackingTime;
     public float trackingDuration;
 
 
-    public void Initialize(MidtermEnemySpawnerScript spawner, MidtermPlayerScriptOld player)
+    public void Initialize(MidtermEnemySpawnerScript spawner, MidtermPlayerScript player)
     {
         midtermEnemySpawnerScript = spawner;
-        midtermPlayerScriptOld = player;
+        MidtermPlayerScript = player;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -31,9 +31,9 @@ public class MidtermEnemyScript : MonoBehaviour
         trackingDuration = 500f;
 
         trackingTime += Time.deltaTime;
-        enemyPath = midtermPlayerScriptOld.transform.position - transform.position;
+        enemyPath = MidtermPlayerScript.transform.position - transform.position;
 
-        transform.position = Vector2.Lerp(transform.position, midtermPlayerScriptOld.transform.position, trackingTime/trackingDuration);
+        transform.position = Vector2.Lerp(transform.position, MidtermPlayerScript.transform.position, trackingTime/trackingDuration);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -44,7 +44,7 @@ public class MidtermEnemyScript : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if(midtermPlayerScriptOld.youWin == true)
+        if(MidtermPlayerScript.youWin == true)
         {
             Destroy(gameObject);
         }

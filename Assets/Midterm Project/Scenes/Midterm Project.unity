@@ -631,6 +631,67 @@ Transform:
   - {fileID: 833955957}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &514021847
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5016521962260900055, guid: 7682c83032616804a94e2118499f9639, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 69.034256
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016521962260900055, guid: 7682c83032616804a94e2118499f9639, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.756
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016521962260900055, guid: 7682c83032616804a94e2118499f9639, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 20.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016521962260900055, guid: 7682c83032616804a94e2118499f9639, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016521962260900055, guid: 7682c83032616804a94e2118499f9639, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016521962260900055, guid: 7682c83032616804a94e2118499f9639, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016521962260900055, guid: 7682c83032616804a94e2118499f9639, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016521962260900055, guid: 7682c83032616804a94e2118499f9639, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016521962260900055, guid: 7682c83032616804a94e2118499f9639, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016521962260900055, guid: 7682c83032616804a94e2118499f9639, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016521962260900055, guid: 7682c83032616804a94e2118499f9639, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760402288257472750, guid: 7682c83032616804a94e2118499f9639, type: 3}
+      propertyPath: m_Name
+      value: Ground
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7682c83032616804a94e2118499f9639, type: 3}
 --- !u!1001 &522439883
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2686,7 +2747,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HealthbarScript
   Healthbar: {fileID: 1343603727}
   HealthRemaining: 0
-  midtermPlayerScriptOld: {fileID: 736274854}
+  MidtermPlayerScript: {fileID: 736274854}
 --- !u!4 &1376653801 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5016521962260900055, guid: 7682c83032616804a94e2118499f9639, type: 3}
@@ -2809,7 +2870,7 @@ MonoBehaviour:
   creditsPanel: {fileID: 1822253306}
   winPanel: {fileID: 1005783525}
   gameOverPanel: {fileID: 1271978915}
-  midtermPlayerScriptOld: {fileID: 736274854}
+  MidtermPlayerScript: {fileID: 736274854}
   Enemies: {fileID: 1066201039}
 --- !u!4 &1638629814
 Transform:
@@ -3496,7 +3557,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6370b97348bf0443a84449da3766584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MidtermCameraScript
-  midtermPlayerScriptOld: {fileID: 736274854}
+  MidtermPlayerScript: {fileID: 736274854}
   CameraPosition: {x: 0, y: 0, z: 0}
   GroundedPosition: {x: 0, y: 0, z: 0}
   PlayerPosition: {x: 0, y: 0, z: 0}
@@ -3944,6 +4005,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8978728357088291168, guid: 30d07c32ee44bbc4783f8cd9c3367774, type: 3}
+      propertyPath: MidtermPlayerScript
+      value: 
+      objectReference: {fileID: 736274854}
+    - target: {fileID: -8978728357088291168, guid: 30d07c32ee44bbc4783f8cd9c3367774, type: 3}
       propertyPath: midtermPlayerScriptOld
       value: 
       objectReference: {fileID: 736274854}
@@ -4081,3 +4146,4 @@ SceneRoots:
   - {fileID: 999160127}
   - {fileID: 1638629814}
   - {fileID: 1820523541}
+  - {fileID: 514021847}

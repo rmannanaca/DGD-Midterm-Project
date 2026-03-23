@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class MidtermEnemySpawnerScript : MonoBehaviour
 {
-    public MidtermPlayerScriptOld player;
+    public MidtermPlayerScript player;
 
     public Transform EnemiesParent;
     public GameObject NewEnemy;
@@ -30,7 +30,7 @@ public class MidtermEnemySpawnerScript : MonoBehaviour
 
         MidtermEnemyScript enemyScript = Enemy.GetComponent<MidtermEnemyScript>();
         enemyScript.midtermEnemySpawnerScript = this;
-        enemyScript.midtermPlayerScriptOld = player;
+        enemyScript.MidtermPlayerScript = player;
         }
         
     }

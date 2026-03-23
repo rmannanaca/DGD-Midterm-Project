@@ -7,7 +7,7 @@ public class MidtermGameManagerScript : MonoBehaviour
     public GameObject winPanel;
     public GameObject gameOverPanel;
 
-    public MidtermPlayerScriptOld midtermPlayerScriptOld;
+    public MidtermPlayerScript MidtermPlayerScript;
 
     public GameObject Enemies;
 
@@ -25,18 +25,18 @@ public class MidtermGameManagerScript : MonoBehaviour
         
 
         //GAME OVER
-        if(midtermPlayerScriptOld.HealthRemaining <= 0)
+        if(MidtermPlayerScript.HealthRemaining <= 0)
         {
         gameOverPanel.SetActive(true);
         Time.timeScale = 0f;
         }
-        // if(midtermPlayerScriptOld.HealthRemaining <= 0)
+        // if(MidtermPlayerScript.HealthRemaining <= 0)
         // {
         //     SceneManager.LoadScene("Game Over");
         // }
 
         //WIN SCREEN
-        if (midtermPlayerScriptOld.youWin == true)
+        if (MidtermPlayerScript.youWin == true)
         {
             Destroy(Enemies);
             winPanel.SetActive(true);
