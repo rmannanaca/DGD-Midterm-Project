@@ -3255,7 +3255,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sprites by Nekasa
+  m_text: 'Sprites by Nekasa
+
+    (@BakoEnaka)
+
+
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4b8a438de9c10324580ed265b8c49b11, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 4b8a438de9c10324580ed265b8c49b11, type: 2}
