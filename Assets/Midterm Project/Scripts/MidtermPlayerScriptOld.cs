@@ -76,6 +76,8 @@ public class MidtermPlayerScriptOld : MonoBehaviour
 
     public Animator MidtermAnimationController;
 
+    public SpriteRenderer MidtermSpriteRenderer;
+
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -251,6 +253,10 @@ public class MidtermPlayerScriptOld : MonoBehaviour
 
             PlayerRigidbody2D.linearVelocity = new Vector2(PlayerRigidbody2D.linearVelocity.x, (75f * j));
         }
+        else
+        {
+            isJumping = false;
+        }
 
         // if(transform.position.y > JumpHeight)
         // {
@@ -318,10 +324,7 @@ public class MidtermPlayerScriptOld : MonoBehaviour
         //DIVE
         if(isGrounded == false && Input.GetKeyDown("d"))
         {
-
             PlayerRigidbody2D.linearVelocity = new Vector2(0,0);
-
-            
         }
 
         if (isGrounded == false && Input.GetKey("d"))
@@ -356,6 +359,16 @@ public class MidtermPlayerScriptOld : MonoBehaviour
                 MidtermAnimationController.SetBool("isWalking", false);
             }
         }
+
+        if (isJumping == true)
+        {
+            MidtermAnimationController.SetBool("isJumping", true);
+        }
+        else
+        {
+            MidtermAnimationController.SetBool("isJumping", false);
+        }
+
         if(DashingTime < DashDuration)
         {
             MidtermAnimationController.SetBool("isDashing", Dashing);
@@ -373,6 +386,18 @@ public class MidtermPlayerScriptOld : MonoBehaviour
         else
         {
             MidtermAnimationController.SetBool("isFalling",false);
+        }
+
+
+
+        //SPRITE FLIPPING
+        if (Input.GetAxisRaw("Horizontal") < 0)
+        {
+            MidtermSpriteRenderer.flipX = true;
+        }
+        if(Input.GetAxisRaw("Horizontal") > 0)
+        {
+            MidtermSpriteRenderer.flipX = false;
         }
 
 
